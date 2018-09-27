@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+.search-results {
+    border: 1px solid grey;
+    margin: 20px auto;
+}
+
+.js-query {
+    border: 1px solid grey;
+}
