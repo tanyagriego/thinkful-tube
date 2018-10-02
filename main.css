@@ -5,9 +5,13 @@
     background-color: #78aff4;
 }
 
-title {
-    font-size: 36px;
-    color: rgba(97, 87, 87, 0.296);
+header {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.317);
+}
+
+main {
+    margin-top: 50px;
 }
 
 h2 {
@@ -20,8 +24,17 @@ h2 {
 }
 .search-results {
     border: 1px solid grey;
+    padding: 0 25px;
     margin: 35px;
     width: 15%;
+}
+
+img {
+    
+}
+
+a {
+    
 }
 
 ::placeholder {
