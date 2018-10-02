@@ -21,7 +21,8 @@ function getDataFromApi (searchTerm, callback){
 
 //Appends data to the DOM
 function renderResults(item){
-    return `<div class="search-results"><a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">${item.snippet.title}<img src="${item.snippet.thumbnails.default.url}"></a></div>`;
+     return`<div class="search-results"><a href="https://www.youtube.com/watch?v=${item.id.videoId} target="_blank"><img src="${item.snippet.thumbnails.default.url}"></a>
+            <a href="https://www.youtube.com/watch?v=${item.id.videoId} class="videoTitle" target="_blank">${item.snippet.title}</a></div>`;
 }
 
 //Does something with the data (callback)

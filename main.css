@@ -22,19 +22,32 @@ h2 {
 .js-search-form {
     margin: 0 50px;
 }
-/* .search-results {
-    border: 1px solid grey;
-    padding: 0 25px;
+.search-results {
+    display: flex;
+    border-radius: 5px;
+    /*padding: 0 25px;
     margin: 35px;
-    width: 15%;
-} */
+    width: 15%;*/
+} 
 
 img {
+    display:flex;
     margin-right: 15px;
 }
 
-a {
-    
+.videoTitle {
+  font-size: 12px;
+  color:#fff;
+  text-decoration: none;  
+}
+
+a:link {
+    color:#fff;
+    text-decoration: none;   
+}
+
+a:visited {
+    color:#B8336A;
 }
 
 ::placeholder {
