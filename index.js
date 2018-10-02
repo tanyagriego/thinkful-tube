@@ -8,7 +8,8 @@ function getDataFromApi (searchTerm, callback){
         data: {
             q: `${searchTerm}`,
             part: 'snippet',
-            key: "AIzaSyBXjnIeLhAmsGhwe7XQePKmHvCL1J_DEMM"
+            key: "AIzaSyBXjnIeLhAmsGhwe7XQePKmHvCL1J_DEMM",
+            per_page: 3
 
         },
         dataType: 'json',
@@ -19,17 +20,30 @@ function getDataFromApi (searchTerm, callback){
 }
 
 //Appends data to the DOM
+function renderResults(item){
+    return `<div class="search-results"><a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">${item.snippet.title}<img src="${item.snippet.thumbnails.default.url}"></a></div>`;
+}
 
 //Does something with the data (callback)
 function displayYouTubeSearchData (data) {
-    console.log(data.items[0].snippet.title);
+    console.log(data.items[0]);
     //loop through array items in object data?
-    // const results = data.
-    //render results to another function which creates html
-    
+    const results = data.items.map((item) => { 
+    //render results to the function that creates html
+        return renderResults(item);
     //put the html into the search results div
-    // $('.search-results').html();
+    });
+    $('.search_results').html(results);
 }
 
-getDataFromApi("dog", displayYouTubeSearchData);
+function submit () {
+    $('.js-search-form').submit(event => {
+        event.preventDefault();
+        const searchTermTextbox = $(event.currentTarget).find('.js-query');
+        const query = searchTermTextbox.val();
+        searchTermTextbox.val("");
+        getDataFromApi(query, displayYouTubeSearchData);
+    });
+}
 
+$(submit);
