@@ -12,14 +12,14 @@
         <h2>Discover Anything.</h2>
         <h2 class="tagline">Discover Everything.</h2>
         <section role="region" class="search">
-            <form action="#" class="js-search-form">
-                <label for="query"></label>
-                <input type="text" placeholder="i.e. puppies" class="js-query">
+            <form action="#" class="js-search-form" aria-controls="search_results">
+                
+                <input type="text" placeholder="i.e. puppies" aria-label="Search-YouTube" class="js-query">
                 <button type="submit" class="submit">Search</button>
             </form>
         </section>
         
-        <section role="region" class="search_results"></section>
+        <section role="region" aria-live="assertive" aria-atomic="true" id="search_results" class="search_results"></section>
     </main>
     <script
     src="https://code.jquery.com/jquery-3.3.1.js"
